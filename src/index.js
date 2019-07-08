@@ -7,6 +7,7 @@ const app = express();
 //Importando Rutas
 
 const rekognitionRoute = require('./routes/rekognition');
+const indexRoute = require('./routes/index');
 
 
 app.set('port', process.env.PORT || 3000);
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 //Rutas 
 
 app.use('/rekognition/', rekognitionRoute);
+app.use('/', indexRoute);
 
 //staticFiles
 app.use(express.static(path.join(__dirname, 'public')));
