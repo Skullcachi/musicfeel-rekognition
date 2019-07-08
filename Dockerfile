@@ -3,5 +3,5 @@ WORKDIR /app
 COPY ./package.json /app
 RUN npm install
 ADD . /app
-RUN node src/index.js
+CMD node src/index.js
 EXPOSE 3000
